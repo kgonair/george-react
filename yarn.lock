@@ -10875,6 +10875,8 @@ fsevents@^1.2.7:
     react-popper: 1.3.6
     react-scripts: 4.0.3
     reactstrap: 8.5.1
+    typeface-lobster: ^1.1.13
+    typeface-open-sans: ^1.1.13
   languageName: unknown
   linkType: soft
 
@@ -15311,6 +15313,20 @@ resolve@^2.0.0-next.3:
   version: 0.0.6
   resolution: "typedarray@npm:0.0.6"
   checksum: 33b39f3d0e8463985eeaeeacc3cb2e28bc3dfaf2a5ed219628c0b629d5d7b810b0eb2165f9f607c34871d5daa92ba1dc69f49051cf7d578b4cbd26c340b9d1b1
+  languageName: node
+  linkType: hard
+
+"typeface-lobster@npm:^1.1.13":
+  version: 1.1.13
+  resolution: "typeface-lobster@npm:1.1.13"
+  checksum: 292d2cac8afa6e21b0b9d09e621985015cc2731f17135f56a940ed4e9a4209b89f5c4d20558c45dc569d9449ba601138458fac0cafcc262eb0a7bc4056c85852
+  languageName: node
+  linkType: hard
+
+"typeface-open-sans@npm:^1.1.13":
+  version: 1.1.13
+  resolution: "typeface-open-sans@npm:1.1.13"
+  checksum: 2946f8e1d60ce6b9c6639f337f603f20cead6a1ef8c863006c24376a67cc87e2a0c9432024a912350fc4dac9af587b366873c0846aefa008d1f1178d470466ea
   languageName: node
   linkType: hard
 
