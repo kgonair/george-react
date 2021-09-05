@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Directory from "./DirectoryComponent";
-import About from "./AboutComponent";
 import CampsiteInfo from "./CampsiteInfoComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
@@ -24,20 +23,6 @@ class Main extends Component {
   }
 
   render() {
-    const HomePage = () => {
-      return (
-        <Home
-          campsite={
-            this.state.campsites.filter((campsite) => campsite.featured)[0]
-          }
-          promotion={
-            this.state.promotions.filter((promotion) => promotion.featured)[0]
-          }
-          partner={this.state.partners.filter((partner) => partner.featured)[0]}
-        />
-      );
-    };
-
     const CampsiteWithId = ({ match }) => {
       return (
         <CampsiteInfo
@@ -57,19 +42,28 @@ class Main extends Component {
       <div>
         <Header />
         <Switch>
-          <Route path="/home" component={HomePage} />
-          <Route
-            exact
-            path="/directory"
-            render={() => <Directory campsites={this.state.campsites} />}
-          />
-          <Route path="/directory/:campsiteId" component={CampsiteWithId} />
+          <Route path="/home">
+            <Home
+              campsite={
+                this.state.campsites.filter((campsite) => campsite.featured)[0]
+              }
+              promotion={
+                this.state.promotions.filter(
+                  (promotion) => promotion.featured
+                )[0]
+              }
+              partner={
+                this.state.partners.filter((partner) => partner.featured)[0]
+              }
+            />
+          </Route>
+          <Route exact path="/directory">
+            <Directory campsites={this.state.campsites} />
+          </Route>
+          <Route path="/directory/:campsiteId">
+            <CampsiteWithId />
+          </Route>
           <Route exact path="/contactus" component={Contact} />
-          <Route
-            exact
-            path="/aboutus"
-            render={() => <About partners={this.state.partners} />}
-          />
           <Redirect to="/home" />
         </Switch>
         <Footer />
